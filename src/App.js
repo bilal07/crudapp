@@ -8,7 +8,17 @@ class App extends Component {
       {name:'css'},
       {name:'reactjs'},
       {name:'angular'},
-    ]
+    ],
+    current: '' 
+  }
+
+  //UpdateCourse
+  updateCourse = (e) => {
+    console.log(e.target.value);
+  }
+  //AddCourse
+  addCourse = (e) => {
+    e.preventDefault();
   }
   render() {
     const courses = this.state.courses;
@@ -18,7 +28,7 @@ class App extends Component {
     return (
       <section className="App">
         <h2>Add Course</h2>
-        <CourseForm />
+        <CourseForm updateCourse={this.updateCourse} addCourse={this.addCourse}/>
         <ul>{courseList}</ul>
       </section>
     );
