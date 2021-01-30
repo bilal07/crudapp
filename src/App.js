@@ -11,11 +11,15 @@ class App extends Component {
     ]
   }
   render() {
+    const courses = this.state.courses;
+    const courseList = courses.map((course,index) => {
+      return <CourseList details={course} key={index}/>
+    })
     return (
       <section className="App">
         <h2>Add Course</h2>
         <CourseForm />
-        <CourseList />
+        <ul>{courseList}</ul>
       </section>
     );
   }
