@@ -1,12 +1,20 @@
 import React, { Component, Fragment } from 'react';
 
 class CourseList extends Component {
+
+    // render course item
+    renderCourse = () => {
+        return(
+          <li>
+              <span>{this.props.details.name}</span>
+              <button onClick={() => {this.props.deleteCourse(this.props.index)}}>Delete Course</button>
+          </li>
+        )
+    }
     render() {
       return (
         <Fragment>
-          <li>
-              {this.props.details.name}
-          </li>
+          {this.renderCourse()}
         </Fragment>
       );
     }
